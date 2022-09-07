@@ -1,10 +1,14 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Notely_API_Project.Database;
+using Notely_API_Project.Repositories;
+using Notely_API_Project.Repositories.Implementation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +29,8 @@ namespace Notely_API_Project
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDbContext<NotelyAPIDbContext>(optionsAction: options => options.UseSqlite(Configuration["Data:NotelyAPIProject:ConnectionString"]));
+            services.AddTransient<INoteRepository, NoteRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
