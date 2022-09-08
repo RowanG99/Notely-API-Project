@@ -29,6 +29,7 @@ namespace Notely_API_Project
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSwaggerGen();
             services.AddDbContext<NotelyAPIDbContext>(optionsAction: options => options.UseSqlite(Configuration["Data:NotelyAPIProject:ConnectionString"]));
             services.AddTransient<INoteRepository, NoteRepository>();
         }
@@ -39,6 +40,11 @@ namespace Notely_API_Project
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(c=>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+                 });
             }
 
             app.UseRouting();

@@ -1,3 +1,7 @@
-﻿Videos to watch: 
-With regards to Enumerables -> https://www.youtube.com/watch?v=UfT-st9dl8Q.
-Enumerables vs Queryables.
+﻿Videos to watch/concepts to understand: 
+	With regards to Enumerables -> https://www.youtube.com/watch?v=UfT-st9dl8Q.
+C# Programming (Beginners) by AngelSix -> https://www.youtube.com/playlist?list=PLrW43fNmjaQXhWOKalftye87ObZA-xNIJ. 
+	Enumerables vs Queryables -> https://www.youtube.com/watch?v=pWoE2ijHhHk.
+DotNet Core Central -> https://www.youtube.com/c/DotNetCoreCentral/playlists.
+With regards to the DbContext, need to understand it better.
+With regards to actionresult, need to understand it better.
